@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import classes from "./App.module.scss";
 
 function App() {
+  const [backgroundSwitch, setBackgroundSwitch] = useState(false);
+
+  let appClasses = `${classes.Standardbg} `;
+
+  if (backgroundSwitch) {
+    appClasses = `${classes.Standardbg} `;
+  }
+
+  if (backgroundSwitch) {
+    appClasses = `${classes.Greenbg} `;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${classes.App} ${appClasses} `}>
+      <h1>Faction Generator</h1>
+      <button onClick={() => setBackgroundSwitch(!backgroundSwitch)}>
+        Change background
+      </button>
     </div>
   );
 }
