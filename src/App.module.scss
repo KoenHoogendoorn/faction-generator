@@ -17,6 +17,15 @@
 
 h1 {
   text-align: center;
-  margin: 0;
-  color: white;
+
+  span {
+    margin: 20vh 0 0 0;
+    color: white;
+    font-size: 64px;
+    border-width: 0;
+    border-bottom-width: 6px;
+    border-style: solid;
+    border-image-slice: 6;
+    border-image-source: url("assets/borderBottom.svg");
+  }
 }

@@ -16,7 +16,9 @@ function App() {
 
   return (
     <div className={`${classes.App} ${appClasses} `}>
-      <h1>Faction Generator</h1>
+      <h1>
+        <span>Faction Generator</span>
+      </h1>
       <button onClick={() => setBackgroundSwitch(!backgroundSwitch)}>
         Change background
       </button>
