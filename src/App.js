@@ -19,9 +19,15 @@ function App() {
       <h1>
         <span>Faction Generator</span>
       </h1>
-      <button onClick={() => setBackgroundSwitch(!backgroundSwitch)}>
-        Change background
-      </button>
+      <div class={classes.ButtonContainer}>
+        <button
+          class={classes.GenerateButton}
+          onClick={() => setBackgroundSwitch(!backgroundSwitch)}
+        >
+          <i></i>
+          Generate faction
+        </button>
+      </div>
     </div>
   );
 }
