@@ -7,5 +7,4 @@ const Button = (props) => (
     Generate faction
   </button>
 );
-
 export default Button;
