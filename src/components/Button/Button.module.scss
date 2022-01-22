@@ -1,0 +1,80 @@
+.Button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 32px;
+  text-align: center;
+  color: #ffd700;
+  padding: 32px 64px;
+  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  &:hover {
+    color: #9f8601;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+
+    &.Button i::before {
+      background: linear-gradient(180deg, #9f8601 0%, #fed701 100%);
+    }
+  }
+}
+
+.Button i {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 4px;
+  padding: 3px;
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    /* this will cover only the content (no padding) */
+      linear-gradient(#fff 0 0) padding-box; /* this will cover the content and the padding */
+  -webkit-mask-composite: destination-out; /* needed for old browsers until the below is more supported */
+  mask-composite: exclude; /* this will exclude the first layer from the second so only the padding area will be kept visible */
+
+  &::before {
+    content: "";
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #fed701 0%, #9f8601 100%);
+  }
+}
+
+.Button:hover {
+  transition: 0.3s;
+  color: #9f8601;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+
+  &.Button i::before {
+    background: linear-gradient(180deg, #9f8601 0%, #fed701 100%);
+  }
+}

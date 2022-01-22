@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classes from "./App.module.scss";
 
+import Button from "./components/Button/Button";
+
 function App() {
   const [backgroundSwitch, setBackgroundSwitch] = useState(false);
 
@@ -20,13 +22,7 @@ function App() {
         <span>Faction Generator</span>
       </h1>
       <div class={classes.ButtonContainer}>
-        <button
-          class={classes.GenerateButton}
-          onClick={() => setBackgroundSwitch(!backgroundSwitch)}
-        >
-          <i></i>
-          Generate faction
-        </button>
+        <Button clicked={() => setBackgroundSwitch(!backgroundSwitch)}></Button>
       </div>
     </div>
   );
