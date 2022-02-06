@@ -5,19 +5,33 @@ import Button from "./components/Button/Button";
 import FactionPanel from "./components/FactionPanel/FactionPanel";
 
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState("blue");
   const [factionGenerated, setFactionGenerated] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState("#062743");
   const [type, setType] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
 
   const bgColorData = [
-    "Brown",
-    "Chocolate",
-    "DarkCyan",
-    "DarkMagenta",
-    "MidnightBlue",
-    "DarkGreen"
+    "#00481D", //forest green
+    "#6D214F", //magenta purple
+    "#2C3A47", //ships officer grey
+    "#cd6133", //chilean fire orange
+    "#cc8e35", //alameda ochre
+    "#ccae62", //desert
+    "#227093", //devil blue
+    "#218c74", //palm springs splash turquoise
+    "#c23616", //harley davidson orange
+    "#B92B27", //quora red
+    "#410093", //yahoo purple
+    "#A20025", //crimson red
+    "#6e304b", //finn redpurple
+    "#1c474d", //blue dianne
+    "#006992", //bahama blue
+    "#d4af37", //gold
+    "#019875", //green haze
+    "#019875", //brown
+    "#34495E", //wet asphalt
+    "#bec2cb" //silver
   ];
 
   const typeData = ["Lizardpeople", "Ninjas", "Pirates", "Monks", "Zealots"];
