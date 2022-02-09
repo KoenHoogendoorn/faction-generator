@@ -158,13 +158,19 @@ function App() {
   };
 
   return (
-    <div className={`${classes.App} ${classes.Standardbg} `} style={appStyle}>
-      <h1 className={h1Classes}>
-        <span>Faction Generator</span>
-      </h1>
-      {factionGenerated ? faction : null}
-      {button}
-    </div>
+    <React.Fragment>
+      <div
+        className={`${classes.App} ${classes.ShadowBg} `}
+        style={appStyle}
+      ></div>
+      <div className={classes.App}>
+        <h1 className={h1Classes}>
+          <span>Faction Generator</span>
+        </h1>
+        {factionGenerated ? faction : null}
+        {button}
+      </div>
+    </React.Fragment>
   );
 }
 
