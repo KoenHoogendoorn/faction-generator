@@ -15,6 +15,12 @@ function App() {
   const [type, setType] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
+  const [fadeOutInAnimation, setFadeOutInAnimation] = useState(false);
+  const [fadeInAnimation, setFadeInAnimation] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(leader, "- Has changed");
+  // }, [leader]);
 
   const backgroundColorData = [
     "#00481D", //forest green
@@ -182,21 +188,19 @@ function App() {
     }
   };
 
-  const buttonClicked = () => {
+  const newContentHandler = () => {
     //set new bg color
     const newBackgroundColor = newItemHandler(
       backgroundColorData,
       backgroundColor
     );
     setBackgroundColor(newBackgroundColor);
+
     //set new bg pattern
     const newBackgroundPattern = newItemHandler(
       backgroundPatternData,
       backgroundPattern
     );
-
-    console.log(newBackgroundPattern);
-    // console.log(backgroundPattern);
 
     setBackgroundPattern(newBackgroundPattern);
     //set new type
@@ -208,7 +212,19 @@ function App() {
     //set new leader
     const newLeader = newItemHandler(leaderData, leader);
     setLeader(newLeader);
+  };
 
+  const buttonClicked = () => {
+    // if fadeAnimation changes, factionpanel animation will trigger
+    setFadeOutInAnimation(!fadeOutInAnimation);
+    if (!factionGenerated) {
+      newContentHandler();
+    } else {
+      //leave time for animation
+      setTimeout(() => {
+        newContentHandler();
+      }, 500);
+    }
     setFactionGenerated(true);
   };
 
@@ -222,11 +238,17 @@ function App() {
     buttonContainerClasses += `${classes.ButtonContainerBottom} `;
   }
 
-  const faction = (
-    <div className={`${classes.Container} ${classes.FactionContainer}`}>
-      <FactionPanel type={type} location={location} leader={leader} />
-    </div>
-  );
+  // const faction = (
+  //   <div className={`${classes.Container} ${classes.FactionContainer}`}>
+  //     <FactionPanel
+  //       fadeInAnimation={fadeInAnimation}
+  //       fadeOutInAnimation={fadeOutInAnimation}
+  //       type={type}
+  //       location={location}
+  //       leader={leader}
+  //     />
+  //   </div>
+  // );
 
   const button = (
     <div className={buttonContainerClasses}>
@@ -249,7 +271,18 @@ function App() {
         <h1 className={h1Classes}>
           <span>Faction Generator</span>
         </h1>
-        {factionGenerated ? faction : null}
+        {/* eigenlijk moet hier niet null maar opacity 0 staan zodat de fade in werkt */}
+        {/* {factionGenerated ? faction : null} */}
+        <div className={`${classes.Container} ${classes.FactionContainer}`}>
+          <FactionPanel
+            factionGenerated={factionGenerated}
+            fadeInAnimation={fadeInAnimation}
+            fadeOutInAnimation={fadeOutInAnimation}
+            type={type}
+            location={location}
+            leader={leader}
+          />
+        </div>
         {button}
       </div>
     </React.Fragment>
