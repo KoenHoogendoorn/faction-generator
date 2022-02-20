@@ -18,7 +18,6 @@ function App() {
   const [fadeOutInAnimation, setFadeOutInAnimation] = useState(false);
   //--
   const [fadeOutInToggle, setFadeOutInToggle] = useState("initial");
-  const [fadeInAnimation, setFadeInAnimation] = useState(false);
 
   const backgroundColorData = [
     "#00481D", //forest green

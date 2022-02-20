@@ -6,11 +6,6 @@ const FactionPanel = (props) => {
 
   let factionPanelClasses = `${classes.FactionPanel} ${classes.HiddenFactionPanel} `;
 
-  // useEffect(() => {
-  //   console.log(`${fadeOutInToggle} 1`);
-  //   setFadeOutInToggle("fade one");
-  // }, [props.fadeInAnimation]);
-
   useEffect(() => {
     console.log(`${fadeOutInToggle} 2`);
 
