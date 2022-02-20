@@ -16,11 +16,9 @@ function App() {
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
   const [fadeOutInAnimation, setFadeOutInAnimation] = useState(false);
+  //--
+  const [fadeOutInToggle, setFadeOutInToggle] = useState("initial");
   const [fadeInAnimation, setFadeInAnimation] = useState(false);
-
-  // useEffect(() => {
-  //   console.log(leader, "- Has changed");
-  // }, [leader]);
 
   const backgroundColorData = [
     "#00481D", //forest green
@@ -164,6 +162,10 @@ function App() {
     "a demon"
   ];
 
+  let h1Classes;
+  let appClasses = `${classes.App}`;
+  let buttonContainerClasses = `${classes.Container} `;
+
   const pickRandomItem = (array) => {
     const randomItem = array[Math.floor(Math.random() * array.length)];
     return randomItem;
@@ -226,10 +228,37 @@ function App() {
       }, 500);
     }
     setFactionGenerated(true);
+    // bg fade
+    switch (fadeOutInToggle) {
+      case "initial": // deze triggered meteen
+        setFadeOutInToggle("first");
+        break;
+      case "first":
+        setFadeOutInToggle("fade one");
+        break;
+      case "fade one":
+        setFadeOutInToggle("fade two");
+        break;
+      case "fade two":
+        setFadeOutInToggle("fade one");
+        break;
+      default:
+        break;
+    }
   };
-
-  let h1Classes;
-  let buttonContainerClasses = `${classes.Container} `;
+  switch (fadeOutInToggle) {
+    case "first":
+      appClasses = `${classes.App} ${classes.FadeInAnimation}`;
+      break;
+    case "fade one":
+      appClasses = `${classes.App} ${classes.FadeOneBgAnimation}`;
+      break;
+    case "fade two":
+      appClasses = `${classes.App} ${classes.FadeTwoBgAnimation}`;
+      break;
+    default:
+      break;
+  }
 
   if (!factionGenerated) {
     h1Classes = `${classes.TitleMiddle} `;
@@ -237,18 +266,6 @@ function App() {
     h1Classes = `${classes.TitleTop} `;
     buttonContainerClasses += `${classes.ButtonContainerBottom} `;
   }
-
-  // const faction = (
-  //   <div className={`${classes.Container} ${classes.FactionContainer}`}>
-  //     <FactionPanel
-  //       fadeInAnimation={fadeInAnimation}
-  //       fadeOutInAnimation={fadeOutInAnimation}
-  //       type={type}
-  //       location={location}
-  //       leader={leader}
-  //     />
-  //   </div>
-  // );
 
   const button = (
     <div className={buttonContainerClasses}>
@@ -267,16 +284,14 @@ function App() {
         className={`${classes.App} ${classes.ShadowBg} `}
         style={appStyle}
       ></div>
-      <div className={classes.App}>
+      <div className={appClasses}>
         <h1 className={h1Classes}>
           <span>Faction Generator</span>
         </h1>
-        {/* eigenlijk moet hier niet null maar opacity 0 staan zodat de fade in werkt */}
-        {/* {factionGenerated ? faction : null} */}
+
         <div className={`${classes.Container} ${classes.FactionContainer}`}>
           <FactionPanel
             factionGenerated={factionGenerated}
-            fadeInAnimation={fadeInAnimation}
             fadeOutInAnimation={fadeOutInAnimation}
             type={type}
             location={location}

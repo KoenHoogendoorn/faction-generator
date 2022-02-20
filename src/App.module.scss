@@ -18,26 +18,19 @@
 
   animation: blinkIt 3s infinite;
 }
-@keyframes blinkIt {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.8;
-  }
+.FadeInAnimation {
+  animation: fadeIn 0.5s;
+}
 
-  50% {
-    opacity: 0.9;
-  }
-  60% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
+.FadeOneBgAnimation {
+  // background-color: pink;
+  // color: blue;
+  animation: fadeOneBg 1s;
+}
+.FadeTwoBgAnimation {
+  // background-color: red;
+  // color: green;
+  animation: fadeTwoBg 1s;
 }
 
 h1 {
@@ -81,4 +74,59 @@ h1 {
 
 .ButtonContainerBottom {
   bottom: 20vh;
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@keyframes fadeOneBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@keyframes fadeTwoBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@keyframes blinkIt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
