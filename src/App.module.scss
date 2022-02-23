@@ -23,13 +23,9 @@
 }
 
 .FadeOneBgAnimation {
-  // background-color: pink;
-  // color: blue;
   animation: fadeOneBg 1s;
 }
 .FadeTwoBgAnimation {
-  // background-color: red;
-  // color: green;
   animation: fadeTwoBg 1s;
 }
 
@@ -128,5 +124,16 @@ h1 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TitleMiddle {
+    top: 40vh;
+    font-size: 32px;
+  }
+
+  .Container {
+    bottom: 15vh;
   }
 }

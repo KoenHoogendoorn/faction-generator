@@ -30,6 +30,19 @@
       background: linear-gradient(180deg, #9f8601 0%, #fed701 100%);
     }
   }
+
+  &:active {
+    color: #6b5b00;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+
+    &.Button i::before {
+      background: linear-gradient(180deg, #7e6b00 0%, #d4b500 100%);
+    }
+  }
 }
 
 .Button i {
@@ -65,16 +78,23 @@
   }
 }
 
-.Button:hover {
-  transition: 0.3s;
-  color: #9f8601;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+// .Button:hover {
+//   transition: 0.3s;
+//   color: #9f8601;
+//   background: linear-gradient(
+//     180deg,
+//     rgba(0, 0, 0, 0.3) 0%,
+//     rgba(0, 0, 0, 0.6) 100%
+//   );
 
-  &.Button i::before {
-    background: linear-gradient(180deg, #9f8601 0%, #fed701 100%);
+//   &.Button i::before {
+//     background: linear-gradient(180deg, #9f8601 0%, #fed701 100%);
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  .Button {
+    font-size: 20px;
+    padding: 20px 40px;
   }
 }

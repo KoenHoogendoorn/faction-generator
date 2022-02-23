@@ -334,12 +334,6 @@ function App() {
     buttonContainerClasses += `${classes.ButtonContainerBottom} `;
   }
 
-  const button = (
-    <div className={buttonContainerClasses}>
-      <Button clicked={() => buttonClicked()}></Button>
-    </div>
-  );
-
   const appStyle = {
     backgroundColor: backgroundColor,
     backgroundImage: backgroundPattern
@@ -365,7 +359,9 @@ function App() {
             leader={leader}
           />
         </div>
-        {button}
+        <div className={buttonContainerClasses}>
+          <Button clicked={() => buttonClicked()}></Button>
+        </div>
       </div>
     </React.Fragment>
   );

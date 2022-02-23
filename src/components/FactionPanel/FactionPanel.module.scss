@@ -6,6 +6,7 @@
   font-size: 52px;
   text-align: center;
   padding: 64px 96px;
+  max-width: 70%;
   overflow: hidden;
   z-index: 0;
   background: linear-gradient(
@@ -269,5 +270,22 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .FactionPanel {
+    font-size: 48px;
+    padding: 48px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .FactionPanel {
+    max-width: initial;
+    margin: 0 16px;
+    font-size: 32px;
+    padding: 32px;
+    bottom: 30vh;
   }
 }
