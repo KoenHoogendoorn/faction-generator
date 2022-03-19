@@ -55,7 +55,6 @@ const FactionPanel = (props) => {
         className={`${classes.Dot} ${classes.Bottom} ${classes.Right}`}
       ></div>
       <div className={`${classes.Dot} ${classes.Bottom} ${classes.Left}`}></div>
-      <i></i>
       {`${props.type} ${props.location} who follow ${props.leader}`}
     </div>
   );
