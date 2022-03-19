@@ -1,14 +1,12 @@
 .FactionPanel {
   position: relative;
-  display: table;
+  // display: table;
   margin: 0 auto;
   font-weight: bold;
   font-size: 52px;
   text-align: center;
   padding: 64px 96px;
   max-width: 70%;
-  overflow: hidden;
-  z-index: 0;
   backdrop-filter: blur(1px);
   border-width: 3px;
   border-style: solid;
@@ -70,27 +68,27 @@
 }
 
 .FadeInAnimation {
-  animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -o-animation: fadeIn 1s;
-  -ms-animation: fadeIn 1s;
+  -webkit-animation: fadeIn 0.5s linear 0s;
+  -moz-animation: fadeIn 0.5s linear 0s;
+  -ms-animation: fadeIn 0.5s linear 0s;
+  -o-animation: fadeIn 0.5s linear 0s;
+  animation: fadeIn 0.5s linear 0s;
 }
 
 .FadeOneAnimation {
-  animation: fadeOne 1s;
-  -webkit-animation: fadeOne 1s;
-  -moz-animation: fadeOne 1s;
-  -o-animation: fadeOne 1s;
-  -ms-animation: fadeOne 1s;
+  -webkit-animation: fadeOne 1s linear 0s;
+  -moz-animation: fadeOne 1s linear 0s;
+  -ms-animation: fadeOne 1s linear 0s;
+  -o-animation: fadeOne 1s linear 0s;
+  animation: fadeOne 1s linear 0s;
 }
 
 .FadeTwoAnimation {
-  animation: fadeTwo 1s;
-  -webkit-animation: fadeTwo 1s;
-  -moz-animation: fadeTwo 1s;
-  -o-animation: fadeTwo 1s;
-  -ms-animation: fadeTwo 1s;
+  -webkit-animation: fadeTwo 1s linear 0s;
+  -moz-animation: fadeTwo 1s linear 0s;
+  -ms-animation: fadeTwo 1s linear 0s;
+  -o-animation: fadeTwo 1s linear 0s;
+  animation: fadeTwo 1s linear 0s;
 }
 
 @keyframes fadeIn {

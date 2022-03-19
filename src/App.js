@@ -329,6 +329,7 @@ function App() {
 
   if (!factionGenerated) {
     h1Classes = `${classes.TitleMiddle} `;
+    buttonContainerClasses += `${classes.ButtonContainerMiddleMobile} `;
   } else {
     h1Classes = `${classes.TitleTop} `;
     buttonContainerClasses += `${classes.ButtonContainerBottom} `;
@@ -350,7 +351,7 @@ function App() {
           <span>Faction Generator</span>
         </h1>
 
-        <div className={`${classes.Container} ${classes.FactionContainer}`}>
+        <div className={classes.Container}>
           <FactionPanel
             factionGenerated={factionGenerated}
             fadeOutInAnimation={fadeOutInAnimation}

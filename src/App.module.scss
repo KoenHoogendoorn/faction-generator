@@ -16,16 +16,32 @@
     rgba(255, 255, 255, 0) 75%
   );
 
+  -webkit-animation: blinkIt 3s infinite;
+  -moz-animation: blinkIt 3s infinite;
+  -ms-animation: blinkIt 3s infinite;
+  -o-animation: blinkIt 3s infinite;
   animation: blinkIt 3s infinite;
 }
 .FadeInAnimation {
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
   animation: fadeIn 0.5s;
 }
 
 .FadeOneBgAnimation {
+  -webkit-animation: fadeOneBg 1s;
+  -moz-animation: fadeOneBg 1s;
+  -ms-animation: fadeOneBg 1s;
+  -o-animation: fadeOneBg 1s;
   animation: fadeOneBg 1s;
 }
 .FadeTwoBgAnimation {
+  -webkit-animation: fadeTwoBg 1s;
+  -moz-animation: fadeTwoBg 1s;
+  -ms-animation: fadeTwoBg 1s;
+  -o-animation: fadeTwoBg 1s;
   animation: fadeTwoBg 1s;
 }
 
@@ -127,13 +143,244 @@ h1 {
   }
 }
 
+// ----
+@-moz-keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+// ----
+@-moz-keyframes fadeOneBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-webkit-keyframes fadeOneBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-o-keyframes fadeOneBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-ms-keyframes fadeOneBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+// ----
+
+@-moz-keyframes fadeTwoBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-webkit-keyframes fadeTwoBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-o-keyframes fadeTwoBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+@-ms-keyframes fadeTwoBg {
+  14% {
+    background-color: initial;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    background-color: initial;
+  }
+}
+
+// ----
+
+@-moz-keyframes blinkIt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blinkIt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes blinkIt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes blinkIt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .TitleMiddle {
     top: 40vh;
     font-size: 32px;
   }
-
+  .TitleTop {
+    font-size: 32px;
+  }
   .Container {
-    bottom: 15vh;
+    bottom: 0vh;
+  }
+  .ButtonContainerBottom,
+  .ButtonContainerMiddleMobile {
+    bottom: 5vh;
   }
 }

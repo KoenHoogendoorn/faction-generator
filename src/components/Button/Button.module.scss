@@ -39,8 +39,10 @@
     rgba(0, 0, 0, 0.2) 0%,
     rgba(0, 0, 0, 0.5) 100%
   ); /* Standard syntax; must be last */
+}
 
-  &:hover {
+@media (hover: hover) {
+  .Button:hover {
     color: #9f8601;
 
     -webkit-border-image: linear-gradient(#9f8601, #fed701) 30;
@@ -68,39 +70,39 @@
       rgba(0, 0, 0, 0.6) 100%
     ); /* Standard syntax; must be last */
   }
+}
 
-  &:active {
-    color: #6b5b00;
-    -webkit-border-image: linear-gradient(#776500, #b49900) 30;
-    -moz-border-image: linear-gradient(#776500, #b49900) 30;
-    border-image: linear-gradient(#776500, #b49900) 30;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    );
-    //bg
-    background-image: -webkit-linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
-    background-image: -moz-linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ); /* For Firefox (3.6 to 15) */
-    background-image: -o-linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ); /* For old Opera (11.1 to 12.0) */
-    background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    ); /* Standard syntax; must be last */
-  }
+.Button:active {
+  color: #6b5b00;
+  -webkit-border-image: linear-gradient(#776500, #b49900) 30;
+  -moz-border-image: linear-gradient(#776500, #b49900) 30;
+  border-image: linear-gradient(#776500, #b49900) 30;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  //bg
+  background-image: -webkit-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  ); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  ); /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  ); /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  ); /* Standard syntax; must be last */
 }
 
 @media screen and (max-width: 600px) {
