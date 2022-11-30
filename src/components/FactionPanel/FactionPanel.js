@@ -6,6 +6,12 @@ const FactionPanel = (props) => {
 
   let factionPanelClasses = `${classes.FactionPanel} ${classes.HiddenFactionPanel} `;
 
+  if (!props.factionGenerated) {
+    factionPanelClasses += `${classes.HiddenFactionPanel} `;
+  } else {
+    factionPanelClasses = `${classes.FactionPanel} `;
+  }
+
   useEffect(() => {
     console.log(`${fadeOutInToggle} 2`);
 
@@ -32,16 +38,16 @@ const FactionPanel = (props) => {
 
   switch (fadeOutInToggle) {
     case "first":
-      factionPanelClasses = `${classes.FactionPanel} ${classes.HiddenFactionPanel}`;
+      factionPanelClasses += `${classes.HiddenFactionPanel} `;
       break;
     case "second":
-      factionPanelClasses = `${classes.FactionPanel} ${classes.FadeInAnimation}`;
+      factionPanelClasses += `${classes.FadeInAnimation} `;
       break;
     case "fade one":
-      factionPanelClasses = `${classes.FactionPanel} ${classes.FadeOneAnimation}`;
+      factionPanelClasses += `${classes.FadeOneAnimation} `;
       break;
     case "fade two":
-      factionPanelClasses = `${classes.FactionPanel} ${classes.FadeTwoAnimation}`;
+      factionPanelClasses += `${classes.FadeTwoAnimation} `;
       break;
     default:
       break;

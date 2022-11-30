@@ -232,6 +232,7 @@ function App() {
   let h1Classes;
   let appClasses = `${classes.App}`;
   let buttonContainerClasses = `${classes.Container} `;
+  let containerClasses = `${classes.Container} `;
 
   const pickRandomItem = (array) => {
     const randomItem = array[Math.floor(Math.random() * array.length)];
@@ -329,10 +330,12 @@ function App() {
 
   if (!factionGenerated) {
     h1Classes = `${classes.TitleMiddle} `;
-    buttonContainerClasses += `${classes.ButtonContainerMiddleMobile} `;
+    buttonContainerClasses = `${classes.Container} ${classes.ButtonContainerMiddleMobile} `;
+    containerClasses = `${classes.Container} `;
   } else {
     h1Classes = `${classes.TitleTop} `;
-    buttonContainerClasses += `${classes.ButtonContainerBottom} `;
+    buttonContainerClasses = `${classes.Container}  ${classes.ButtonContainerBottom} `;
+    containerClasses = `${classes.Container} ${classes.FactionContainer} `;
   }
 
   const appStyle = {
@@ -347,11 +350,11 @@ function App() {
         style={appStyle}
       ></div>
       <div className={appClasses}>
-        <h1 className={h1Classes}>
+        <h1 className={h1Classes} onClick={() => setFactionGenerated(false)}>
           <span>Faction Generator</span>
         </h1>
 
-        <div className={classes.Container}>
+        <div className={containerClasses}>
           <FactionPanel
             factionGenerated={factionGenerated}
             fadeOutInAnimation={fadeOutInAnimation}
@@ -360,8 +363,15 @@ function App() {
             leader={leader}
           />
         </div>
+
         <div className={buttonContainerClasses}>
           <Button clicked={() => buttonClicked()}></Button>
+          {!factionGenerated ? (
+            <p className={classes.portfolioLink}>
+              Find more D&D related apps I made{" "}
+              <a href="https://dddmkoen.com/">here</a>
+            </p>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
