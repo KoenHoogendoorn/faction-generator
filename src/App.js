@@ -368,7 +368,7 @@ function App() {
           <Button clicked={() => buttonClicked()}></Button>
           {!factionGenerated ? (
             <p className={classes.portfolioLink}>
-              Find more D&D related apps I made{" "}
+              Read more about me and other D&D related apps I made{" "}
               <a href="https://dddmkoen.com/">here</a>
             </p>
           ) : null}
